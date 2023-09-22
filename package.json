@@ -1,7 +1,7 @@
 {
-  "name": "TheMystic-Bot-MD",
+  "name": "Zephyr-Bot-MD",
   "version": "1.0.0",
-  "description": "Subs. al canal de YT The Shadow Borkers - TEAM",
+  "description": "gamshop.website",
   "main": "index.js",
   "type": "module",
   "directories": {
@@ -16,16 +16,16 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/BrunoSobrino/TheMystic-Bot-MD",
+  "homepage": "https://github.com/Shizu-SH/Zephyr_WMBot",
   "author": {
-    "name": "BrunoSobrino"
+    "name": "Shizu-SH"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrunoSobrino/TheMystic-Bot-MD.git"
+    "url": "git+https://github.com/Shizu-SH/Zephyr_WMBot.git"
   },
   "bugs": {
-    "url": "https://github.com/BrunoSobrino/TheMystic-Bot-MD/issues"
+    "url": "https://github.com/Shizu-SH/Zephyr_WMBot/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
