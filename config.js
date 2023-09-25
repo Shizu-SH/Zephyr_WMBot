@@ -14,6 +14,19 @@ global.owner = [
 
 global.suittag = ['5492613619545'];
 global.prems = ['5492613619545'];
+global.APIs = { // API Prefix
+  // name: 'https://website'
+  xteam: 'https://api.xteam.xyz', 
+  nrtm: 'https://fg-nrtm.ddns.net',
+  bg: 'http://bochil.ddns.net',
+  fgmods: 'https://api.fgmods.xyz'
+}
+global.APIKeys = { // APIKey Here
+  // 'https://website': 'apikey'
+  'https://api.xteam.xyz': 'd90a9e986e18778b',
+  'https://zenzapis.xyz': '675e34de8a', 
+  'https://api.fgmods.xyz': 'shizu' //--- 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
+}
 
 global.packname = '(☞ﾟ∀ﾟ)☞';
 global.author = '★𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝★';
