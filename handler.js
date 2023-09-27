@@ -1426,7 +1426,7 @@ export async function participantsUpdate({id, participants, action}) {
         const groupMetadata = await m.conn.groupMetadata(id) || (conn.chats[id] || {}).metadata;
         for (const user of participants) {
           let pp = './src/avatar_contact.png';
-          let ppgp = 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg'  
+          let ppgp = 'https://i.ibb.co/3hJTvhv/2-20230925-174831-0001.png'  
           try {
             pp = await m.conn.profilePictureUrl(user, 'image');
           } catch (e) {
