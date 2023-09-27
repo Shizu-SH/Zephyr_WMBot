@@ -1446,23 +1446,23 @@ export async function participantsUpdate({id, participants, action}) {
               return;
             }
                              let wel = API('fgmods', '/api/welcome', {
-                                username: await m.conn.getName(user),
-                                groupname: await m.conn.getName(id),
+                                username: await this.getName(user),
+                                groupname: await this.getName(id),
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/6t5RGby/banner.png'
+                                background: 'https://i.ibb.co/RNkcMD7/zephyr-20230927-191247-0000-2.jpg'
                             }, 'apikey')
 
                             let lea = API('fgmods', '/api/goodbye', {
-                                username: await m.conn.getName(user),
-                                groupname: await m.conn.getName(id),
+                                username: await this.getName(user),
+                                groupname: await this.getName(id),
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/6t5RGby/banner.png'
+                                background: 'https://i.ibb.co/RNkcMD7/zephyr-20230927-191247-0000-2.jpg'
                             }, 'apikey')
-                        m.conn.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                        this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
           }
         }
       }
