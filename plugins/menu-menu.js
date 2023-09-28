@@ -2,8 +2,7 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
-    const pp = imagen1;
-    const img = await(await fetch('https://gamshop.website.png')).buffer();
+    const pp = imagen6;
     // let vn = './media/menu.mp3'
     const img = './Menu2.png';
     const d = new Date(new Date + 3600000);
