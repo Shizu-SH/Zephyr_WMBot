@@ -53,10 +53,14 @@ const registrationHandler = async function(m, { conn, text, usedPrefix, command 
   global.db.data.users[m.sender].money += 10000;
   global.db.data.users[m.sender].exp += 10000;
 
+const handler = async function(m, { conn, text, usedPrefix, command }) {
+  // ... (código anterior)
+
   // Envía el mensaje de inicio de aventura
-  const startMessage = `¡Tu aventura en Greed Island ha comenzado, ${user.name}!\n\n` +
-    `Estás listo para enfrentar emocionantes desafíos, recolectar cartas y aprender nuevos hechizos. ¡Que comience la aventura!\n\n` +
-    `Puedes usar comandos como *explorar*, *inventario* y *hechizos* para interactuar con el juego.`;
+  let startMessage = ''; // Declaración de la variable
+  startMessage += `¡Tu aventura en Greed Island ha comenzado, ${user.name}!\n\n`;
+  startMessage += `Estás listo para enfrentar emocionantes desafíos, recolectar cartas y aprender nuevos hechizos. ¡Que comience la aventura!\n\n`;
+  startMessage += `Puedes usar comandos como *explorar*, *inventario* y *hechizos* para interactuar con el juego.`;
 
   conn.sendMessage(m.chat, startMessage, 'textMessage', { quoted: m });
 };
