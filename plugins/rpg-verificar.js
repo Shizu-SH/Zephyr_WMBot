@@ -1,61 +1,61 @@
 import { createHash } from 'crypto';
 
-const handler = async (m, { conn, text, usedPrefix, command }) => {
+const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
+
+const handler = async function(m, { conn, text, usedPrefix, command }) {
   const user = global.db.data.users[m.sender];
   const name2 = conn.getName(m.sender);
   const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => global.imagen1);
 
-  // Verifica si el jugador ya está registrado en Greed Island
-  if (user.registered) {
-    throw `¡Ya estás registrado en Greed Island!`;
+  if (user.registered === true) {
+    throw `[❗𝐈𝐍𝐅𝐎❗] ¡Ya estás registrado!`;
   }
 
-  // Verifica el formato de registro
-  if (!/^\w+\.\d+$/.test(text)) {
-    throw `*Formato de registro incorrecto.*\n\nEjemplo: ${usedPrefix + command} Shadow.18`;
+  if (!Reg.test(text)) {
+    throw `*[❗𝐈𝐍𝐅𝐎❗] Formato incorrecto.*\n\n*—◉ Usa el comando así: ${usedPrefix + command} nombre.edad*\n*—◉ Ejemplo: ${usedPrefix + command} Shadow.18*`;
   }
 
-  let [name, age] = text.split('.');
+  let [_, name, splitter, age] = text.match(Reg);
+
+  if (!name) {
+    throw '*[❗𝐈𝐍𝐅𝐎❗] Falta el nombre en tu comando.*';
+  }
+
+  if (!age) {
+    throw '*[❗𝐈𝐍𝐅𝐎❗] Falta la edad en tu comando.*';
+  }
+
+  if (name.length >= 30) {
+    throw '[❗𝐈𝐍𝐅𝐎❗] El nombre es demasiado largo.';
+  }
+
   age = parseInt(age);
 
-  // Verifica la edad
-  if (isNaN(age) || age < 5 || age > 100) {
-    throw `*Edad no válida. Debe estar entre 5 y 100 años.*`;
+  if (age > 100) {
+    throw '*[❗] ¿Cómo sigues vivo con esa edad?* 👴🏻';
   }
 
-  // Verifica la longitud del nombre
-  if (name.length >= 30) {
-    throw 'El nombre es demasiado largo.';
+  if (age < 5) {
+    throw '*[❗] ¿Un bebé que sabe usar WhatsApp?* 😲';
   }
 
-  // Realiza el registro
   user.name = name.trim();
   user.age = age;
   user.regTime = +new Date;
   user.registered = true;
+
   const sn = createHash('md5').update(m.sender).digest('hex');
 
-  const caption = `
-┏━━━━━━━━━━━━━━━
-┃ **𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎𝐍**
-┣━━━━━━━━━━━━━━━
-┃ *𝙽𝙾𝙼𝙱𝚁𝙴:* ${name}
-┃ *𝙴𝙳𝙰𝙳:* ${age} años
-┃ *𝙽𝚄𝙼𝙴𝚁𝙾 𝙳𝙴 𝚂𝙴𝚁𝙸𝙴:*
-┃ ${sn}
-┣━━━━━━━━━━━━━━━
-┃ ¡Te has registrado con éxito en Greed Island!
-┗━━━━━━━━━━━━━━━
-  `;
+  const caption = `¡Bienvenido a Greed Island, ${user.name}!\n\nHas sido registrado exitosamente en nuestro juego RPG. Disfruta de tu aventura y comienza a ganar recompensas. Tu número de serie es: ${sn}\n\n`;
 
   await conn.sendFile(m.chat, pp, 'mystic.jpg', caption);
+
   global.db.data.users[m.sender].money += 10000;
   global.db.data.users[m.sender].exp += 10000;
 };
 
-handler.help = ['registro'];
-handler.tags = ['greedisland'];
-handler.command = ['registro', 'registrarse', 'reg'];
-handler.group = true;
+handler.help = ['verificar'];
+handler.tags = ['xp'];
+handler.command = /^(verify|register|verificar|reg|registrar)$/i;
 
 export default handler;
