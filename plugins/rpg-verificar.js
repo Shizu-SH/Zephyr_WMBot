@@ -2,7 +2,7 @@ import { createHash } from 'crypto';
 
 const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 
-const handler = async function(m, { conn, text, usedPrefix, command }) {
+const registrationHandler = async function(m, { conn, text, usedPrefix, command }) {
   const user = global.db.data.users[m.sender];
   const name2 = conn.getName(m.sender);
   const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => global.imagen1);
@@ -32,11 +32,11 @@ const handler = async function(m, { conn, text, usedPrefix, command }) {
   age = parseInt(age);
 
   if (age > 100) {
-    throw '*[❗] ¿Cómo sigues vivo con esa edad?* 👴🏻';
+    throw '*[❗] Abuelo, con esa edad no ganas a nadie*';
   }
 
   if (age < 5) {
-    throw '*[❗] ¿Un bebé que sabe usar WhatsApp?* 😲';
+    throw '*[❗] Eres demaciado joven para morir*';
   }
 
   user.name = name.trim();
@@ -52,10 +52,17 @@ const handler = async function(m, { conn, text, usedPrefix, command }) {
 
   global.db.data.users[m.sender].money += 10000;
   global.db.data.users[m.sender].exp += 10000;
+
+  // Envía el mensaje de inicio de aventura
+  const startMessage = `¡Tu aventura en Greed Island ha comenzado, ${user.name}!\n\n` +
+    `Estás listo para enfrentar emocionantes desafíos, recolectar cartas y aprender nuevos hechizos. ¡Que comience la aventura!\n\n` +
+    `Puedes usar comandos como *explorar*, *inventario* y *hechizos* para interactuar con el juego.`;
+
+  conn.sendMessage(m.chat, startMessage, 'textMessage', { quoted: m });
 };
 
-handler.help = ['verificar'];
-handler.tags = ['xp'];
-handler.command = /^(verify|register|verificar|reg|registrar)$/i;
+registrationHandler.help = ['verificar'];
+registrationHandler.tags = ['xp'];
+registrationHandler.command = /^(verify|register|verificar|reg|registrar)$/i;
 
-export default handler;
+export default registrationHandler;
