@@ -9,7 +9,9 @@ import moment from 'moment-timezone';
 
 global.owner = [
   ['5492613619545', '👑 Shizu-SH 👑', true],
-  ['5492613619545']
+  ['5492613619545'],
+  ['5219996125657'],
+  ['5219992095479']  
 ];
 
 global.suittag = ['5492613619545'];
