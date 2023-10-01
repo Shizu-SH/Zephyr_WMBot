@@ -2,10 +2,10 @@ import { createHash } from 'crypto';
 
 const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 
-const registrationHandler = async function(m, { conn, text, usedPrefix, command }) {
+const handler = async function(m, { conn, text, usedPrefix, command }) {
   const user = global.db.data.users[m.sender];
-  const name2 = conn.getName(m.sender);
-  const pp = await conn.profilePicturehttps://github.com/Shizu-SH/Zephyr_WMBot/securityUrl(m.chat, 'image').catch((_) => global.imagen1);
+  const name2 = await conn.getName(m.sender);
+  const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => global.imagen1);
 
   if (user.registered === true) {
     throw `[❗𝐈𝐍𝐅𝐎❗] ¡Ya estás registrado!`;
@@ -53,20 +53,14 @@ const registrationHandler = async function(m, { conn, text, usedPrefix, command 
   global.db.data.users[m.sender].money += 10000;
   global.db.data.users[m.sender].exp += 10000;
 
-const handler = async function(m, { conn, text, usedPrefix, command }) {
-  // ... (código anterior)
-
-  // Envía el mensaje de inicio de aventura
-  let startMessage = ''; // Declaración de la variable
+  let startMessage = ''; 
   startMessage += `¡Tu aventura en Greed Island ha comenzado, ${user.name}!\n\n`;
   startMessage += `Estás listo para enfrentar emocionantes desafíos, recolectar cartas y aprender nuevos hechizos. ¡Que comience la aventura!\n\n`;
   startMessage += `Puedes usar comandos como *explorar*, *inventario* y *hechizos* para interactuar con el juego.`;
 
   conn.sendMessage(m.chat, startMessage, 'textMessage', { quoted: m });
-};
-
-registrationHandler.help = ['verificar'];
-registrationHandler.tags = ['xp'];
-registrationHandler.command = /^(verify|register|verificar|reg|registrar)$/i;
-
+}
+handler.help = ['verificar'];
+handler.tags = ['xp'];
+handler.command = /^(verify|register|verificar|reg|registrar)$/i;
 export default handler;
