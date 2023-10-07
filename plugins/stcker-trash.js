@@ -10,7 +10,7 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
    let stiker = await sticker(json.data, false, global.packname, global.author);
    if (stiker) return conn.sendFile(m.chat, stiker, 'error.webp', '', m);
 }
-handler.help = ['comando'];
+handler.help = ['trash'];
 handler.tags = ['sticker'];
-handler.command = /^(comando)$/i;
+handler.command = /^(trash)$/i;
 export default handler;
