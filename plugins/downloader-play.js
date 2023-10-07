@@ -11,7 +11,6 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
   let vid = res.videos[0]
   if (!vid) throw `✳️ Vídeo/Audio no encontrado`
   let isVideo = /vid$/.test(command)
-  m.react('🎧') 
   
   try {
   let q = isVideo ? '360p' : '128kbps' 
