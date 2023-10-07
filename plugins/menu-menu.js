@@ -52,7 +52,88 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
  ║💎 DIAMANTES ➟ ${limit} 
  ║💸 DOLARES ➟ ${money} 
  ╰═══════════════ ✧ 
-${readMore}`.trim();
+${readMore}
+
+┌───〈 STICKERS 〉───◆
+│╭─────────────···▸
+┴│▸
+⬡│▸  ${usedPrefix}s
+⬡│▸  ${usedPrefix}wanted
+⬡│▸  ${usedPrefix}trigger
+⬡│▸  ${usedPrefix}rainbow
+⬡│▸  ${usedPrefix}face
+⬡│▸  ${usedPrefix}delete
+⬡│▸  ${usedPrefix}jail
+⬡│▸  ${usedPrefix}spank
+⬡│▸  ${usedPrefix}shit
+⬡│▸  ${usedPrefix}rip
+⬡│▸  ${usedPrefix}trash
+⬡│▸  ${usedPrefix}loli
+⬡│▸  ${usedPrefix}beautiful
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+┬│▸
+│╰────────────···▸▸
+
+┌───〈 JUEGOS 〉───◆
+│╭─────────────···▸
+┴│▸
+⬡│▸  ${usedPrefix}mates *<noob / easy / medium / hard / extreme /impossible /impossible2>*
+⬡│▸  ${usedPrefix}fake *<texto1> <@tag> <texto2>*
+⬡│▸  ${usedPrefix}ppt *<papel / tijera /piedra>*
+⬡│▸  ${usedPrefix}prostituto *<nombre / @tag>*
+⬡│▸  ${usedPrefix}prostituta *<nombre / @tag>*
+⬡│▸  ${usedPrefix}gay2 *<nombre / @tag>*
+⬡│▸  ${usedPrefix}lesbiana *<nombre / @tag>*
+⬡│▸  ${usedPrefix}pajero *<nombre / @tag>*
+⬡│▸  ${usedPrefix}pajera *<nombre / @tag>*
+⬡│▸  ${usedPrefix}puto *<nombre / @tag>*
+⬡│▸  ${usedPrefix}puta *<nombre / @tag>*
+⬡│▸  ${usedPrefix}manco *<nombre / @tag>*
+⬡│▸  ${usedPrefix}manca *<nombre / @tag>*
+⬡│▸  ${usedPrefix}rata *<nombre / @tag>*
+⬡│▸  ${usedPrefix}love *<nombre / @tag>*
+⬡│▸  ${usedPrefix}doxear *<nombre / @tag>*
+⬡│▸  ${usedPrefix}pregunta *<texto>*
+⬡│▸  ${usedPrefix}suitpvp *<@tag>*
+⬡│▸  ${usedPrefix}slot *<apuesta>*
+⬡│▸  ${usedPrefix}ttt *<nombre sala>*
+⬡│▸  ${usedPrefix}delttt
+⬡│▸  ${usedPrefix}acertijo
+⬡│▸  ${usedPrefix}simi *<texto>*
+⬡│▸  ${usedPrefix}top *<texto>*
+⬡│▸  ${usedPrefix}topgays
+⬡│▸  ${usedPrefix}topotakus
+⬡│▸  ${usedPrefix}formarpareja
+⬡│▸  ${usedPrefix}verdad
+⬡│▸  ${usedPrefix}reto
+⬡│▸  ${usedPrefix}cancion
+⬡│▸  ${usedPrefix}pista
+⬡│▸  ${usedPrefix}akinator
+⬡│▸  ${usedPrefix}wordfind_
+┬│▸
+│╰────────────···▸▸
+
+┌───〈 proximamente 〉───◆
+│╭─────────────···▸
+┴│▸
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}
+┬│▸
+│╰────────────···▸▸`.trim();
     if (m.isGroup) {
       conn.sendMessage(m.chat, {text: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": global.titulowm, "containsAutoReply": true, "mediaType": 1, "thumbnailUrl": pp, "mediaUrl": `https://gamshop.website`, "sourceUrl": `https://gamshop.website`}}}, {quoted: m});        
     } else {
