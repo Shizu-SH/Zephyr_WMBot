@@ -70,8 +70,18 @@ ${readMore}
 ⬡│▸  ${usedPrefix}trash
 ⬡│▸  ${usedPrefix}loli
 ⬡│▸  ${usedPrefix}beautiful
-⬡│▸  ${usedPrefix}
-⬡│▸  ${usedPrefix}
+⬡│▸  ${usedPrefix}wm
+⬡│▸  ${usedPrefix}attp
+⬡│▸  ${usedPrefix}stickermaker
+⬡│▸  ${usedPrefix}stickerfilter
+⬡│▸  ${usedPrefix}sticker
+⬡│▸  ${usedPrefix}sremovebg
+⬡│▸  ${usedPrefix}slap
+⬡│▸  ${usedPrefix}semoji
+⬡│▸  ${usedPrefix}scircle
+⬡│▸  ${usedPrefix}qc
+⬡│▸  ${usedPrefix}pat
+⬡│▸  ${usedPrefix}kiss
 ┬│▸
 │╰────────────···▸▸
 
